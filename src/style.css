@@ -62,7 +62,7 @@ h2{font-size:17px;font-weight:600;letter-spacing:-.01em}
 .stapel.nadd b{background:linear-gradient(180deg,#9ed3b0,#4f9e74)}
 .dag small{font-size:12px;color:var(--dim);font-weight:500}
 .dag small.idag{color:var(--text);font-weight:700}
-.dag em{font-style:normal;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
+.dag em{min-height:15px;line-height:15px;font-style:normal;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
 .steg{display:flex;align-items:center;gap:12px}
 .malvarde{font-size:22px;font-weight:600;min-width:28px;text-align:center;font-variant-numeric:tabular-nums}
 .fel{color:#b4553d;font-size:14px;text-align:center}
