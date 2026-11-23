@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e9f1f7">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Vatten">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Vattenkoll</title>
+<link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<main>
+  <header>
+    <p class="datum" id="datum"></p>
+    <h1>Vatten idag</h1>
+  </header>
+
+  <section class="glas kort ring-kort">
+    <div class="ring">
+      <svg viewBox="0 0 220 220" aria-hidden="true">
+        <defs>
+          <linearGradient id="vg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8cc4ea"/><stop offset="1" stop-color="#4a8cc2"/>
+          </linearGradient>
+        </defs>
+        <circle class="spar" cx="110" cy="110" r="94"/>
+        <circle class="fyll" id="fyll" cx="110" cy="110" r="94"/>
+      </svg>
+      <div class="mitt" aria-live="polite">
+        <span class="antal" id="antal">0</span>
+        <span class="av" id="av">av 8 glas</span>
+      </div>
+    </div>
+    <p class="status" id="status">Dags för första glaset.</p>
+  </section>
+
+  <div class="knappar">
+    <button class="kapsel huvud" id="drick" type="button">
+      <svg class="ikon" viewBox="0 0 24 24"><path d="M12 3.2c-2.6 3.4-5.4 6.6-5.4 9.7a5.4 5.4 0 0 0 10.8 0c0-3.1-2.8-6.3-5.4-9.7z"/><path d="M9.4 13.4a2.7 2.7 0 0 0 2 2.5"/></svg>
+      Drack ett glas
+    </button>
+    <button class="kapsel glas rund" id="angra" type="button" aria-label="Ångra senaste glaset" disabled>
+      <svg class="ikon" viewBox="0 0 24 24"><path d="M9 14 4.5 9.5 9 5"/><path d="M4.5 9.5h9.5a5.5 5.5 0 0 1 0 11H11"/></svg>
+    </button>
+  </div>
+
+  <section class="glas kort">
+    <div class="rad">
+      <h2>Senaste veckan</h2>
+      <span class="snitt" id="snitt"></span>
+    </div>
+    <div class="vecka" id="vecka"></div>
+  </section>
+
+  <section class="glas kort rad mal">
+    <div>
+      <h2>Dagens mål</h2>
+      <p class="liten">Glas per dag</p>
+    </div>
+    <div class="steg">
+      <button class="kapsel glas rund liten-knapp" id="minus" type="button" aria-label="Färre glas">
+        <svg class="ikon" viewBox="0 0 24 24"><path d="M6 12h12"/></svg>
+      </button>
+      <span class="malvarde" id="malvarde">8</span>
+      <button class="kapsel glas rund liten-knapp" id="plus" type="button" aria-label="Fler glas">
+        <svg class="ikon" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <p class="fel" id="fel" role="alert" hidden></p>
+</main>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
